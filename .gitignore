@@ -1,0 +1,25 @@
+# Compiled class file
+*.class
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# Maven
+log
+target
+
+# Log file
+.log
+
+# Package Files #
+.jar
+.war
+.ear
+.zip
+.tar.gz
+.rar
+
+# virtual machine crash logs, see httpwww.java.comendownloadhelperror_hotspot.xml
+hs_err_pid

@@ -1,0 +1,6 @@
+---
+applications:
+- name: morseapi
+  instances: 1
+  host: morseapi
+  path: target/morseapi-0.1.0-SNAPSHOT.jar
