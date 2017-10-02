@@ -23,7 +23,7 @@ public class TranslateController {
 		JSONObject json = new JSONObject(text.trim());
 		
 		json.put("code", HttpStatus.OK);
-		json.put("response", translateService.translate2Human(json.getString("text")));
+		json.put("response", translateService.translate2Human(json.getString("text").trim()));
 		json.remove("text");
 		
 		return json.toString();
@@ -34,7 +34,7 @@ public class TranslateController {
 		JSONObject json = new JSONObject(text.trim());
 		
 		json.put("code", HttpStatus.OK);
-		json.put("response", translateService.translate2Morse(json.getString("text")));
+		json.put("response", translateService.translate2Morse(json.getString("text").trim()));
 		json.remove("text");
 		
 		return json.toString();
