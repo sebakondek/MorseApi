@@ -20,7 +20,7 @@ public class TranslateController {
 
 	@RequestMapping(value="2text", method=RequestMethod.POST)
 	public String translate2Text (@RequestBody String text) throws IOException, JSONException{
-		JSONObject json = new JSONObject(text);
+		JSONObject json = new JSONObject(text.trim());
 		
 		json.put("code", HttpStatus.OK);
 		json.put("response", translateService.translate2Human(json.getString("text")));
@@ -31,7 +31,7 @@ public class TranslateController {
 	
 	@RequestMapping(value="2morse", method=RequestMethod.POST)
 	public String translate2Morse (@RequestBody String text) throws IOException, JSONException{
-		JSONObject json = new JSONObject(text);
+		JSONObject json = new JSONObject(text.trim());
 		
 		json.put("code", HttpStatus.OK);
 		json.put("response", translateService.translate2Morse(json.getString("text")));
