@@ -51,7 +51,7 @@ public class TranslateService {
 	}
 	
 	public String translate2Human(String morse) {
-				
+			
 		//Chequeo si hay clave morse
 		if(morse != null && morse.length() > 0) {
 			
@@ -65,6 +65,10 @@ public class TranslateService {
 				//obtengo el valor mediante la clave del mapa table
 				if(morseArray[i].equals(" ") || morseArray[i].equals(""))
 					ascii.append(" ");
+				else if(morseArray[i].equals(".-.-.-")) {
+					ascii.append(table.get(morseArray[i]));
+					return String.valueOf(ascii);
+				}
 				else
 					ascii.append(table.get(morseArray[i]));
 				
@@ -78,9 +82,11 @@ public class TranslateService {
 			return "There is no morse code to translate.";
 		}
 	}
-	
-	
+		
+		
 	public String translate2Morse(String ascii) {
+		
+		ascii.trim();
 		
 		//Chequeo si hay texto a convertir
 		if(ascii != null && ascii.length() > 0) {
@@ -105,7 +111,7 @@ public class TranslateService {
 			
 		} else {
 			
-			return "There is no text to transform.";
+			return "There is no text to transform to morse.";
 		}
 	}
 	
@@ -122,7 +128,6 @@ public class TranslateService {
 		
 		return null;
 	}
-
 }
 
 
